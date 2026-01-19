@@ -1,0 +1,186 @@
+header{
+    direction: rtl;
+}
+
+.NavBar {
+    direction: rtl;
+    width: 100%;
+}
+
+.logo {
+    overflow: hidden;
+    background: #000;            
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5b1212;
+    padding: 12px 24px; 
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+body{
+    background: rgb(40, 34, 34);
+    direction: rtl;
+    font-family: 'Heebo', Arial, sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.NameOfTheMovie {
+    color: white;
+    font-size: larger;
+}
+
+.Path {
+    color: white;
+    width: 100%;
+    margin-bottom: 20px; /* רווח תחתון */
+}
+
+.OO{
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px;
+    gap: 5px;
+    column-gap: 4px;
+}
+
+.Details{
+    color: white;
+    margin-bottom: 20px;
+}
+
+.Trailer{
+    text-align: center;
+    padding-bottom: 30px;
+    padding-right: 80px;
+}
+
+.M{
+    margin-bottom: 10px;
+}
+
+.DisANDPic{
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 1023px) {
+    .DisANDPic{
+        flex-direction: column;
+        text-align: center;
+    }
+    .OO{
+        flex-direction: column;
+    }
+    .menu{
+        justify-content: space-between;
+        padding: 12px 24px; 
+    }
+    .Trailer{
+        padding-right: 0px;
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        padding: 15px;
+    }
+    .menu{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        text-align: center;
+    }
+    .Footer{
+        flex-direction: column;
+        align-items: right;
+        text-align: right;
+    }
+    .Trailer{
+        padding-right: 0px;
+    }
+    .PictureOfMovie{
+
+    }
+}
+
+.Discription{
+    color: white;
+    line-height: 1.8;
+    margin-bottom: 3px;
+    text-align: justify;
+}
+
+.PictureOfMovie{
+    text-align: center;
+}
+
+.PurcashTik{
+    text-align: center;
+    background-color: green;
+    color: white;
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 8px;
+    padding: 8px 50px;
+    margin-bottom: 40px;
+}
+
+.PurcashTik a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.PurcashTik a:hover {
+    text-decoration: underline;
+}
+
+.Footer{
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    row-gap: 20px;
+    column-gap: 60px;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.Head{
+    font-size: larger;
+}
+
+.FootList{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.FootList a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.FootList a:hover {
+    text-decoration: underline;
+}
