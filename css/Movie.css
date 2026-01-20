@@ -2,47 +2,88 @@ header{
     direction: rtl;
 }
 
-.NavBar {
-    direction: rtl;
-    width: 100%;
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid rgba(255,255,255,.10);
+    background: linear-gradient(180deg, rgba(176,42,42,.60), rgba(176,42,42,.35));
+    backdrop-filter: blur(6px);
 }
 
-.logo {
-    overflow: hidden;
-    background: #000;            
+.nav-inner{
+    max-width: 1000px;
+    margin: auto;
+    padding: 16px 20px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    color: white;
 }
 
-.logo img {
-    width: 100%;
-    height: 100%;
+/* Logo */
+.brand{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex: 0 0 auto;
+}
+
+.brand img{
+    height: 70px;      /* תתעסקי רק עם זה אם צריך */
+    width: auto;
     display: block;
-    object-fit: cover;
 }
 
+/* Links */
 .menu{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: #5b1212;
-    padding: 12px 24px; 
+    gap: 10px;
+    flex: 1;
+    justify-content: center;
+    gap: 14px;
 }
 
-.menu a {
-    color: white;
+.menu a{
+    color: var(--text);
     text-decoration: none;
-    margin-left: 20px;
+
+    display: inline-flex;        /* חשוב: מגדיל שטח לחיץ */
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 18px;          /* השטח הגדול שביקשת */
+    border-radius: 12px;
+
+    font-size: 17px;             /* יותר גדול */
+    font-weight: 600;
+    line-height: 1;
+
+    transition: background .12s ease, transform .12s ease;
 }
 
-.menu a:hover {
-    text-decoration: underline;
+.menu a:hover{
+    background: rgba(255,255,255,.10);
+    transform: translateY(-1px);
+}
+
+.hamburger{
+    display: none;
 }
 
 body{
     background: rgb(40, 34, 34);
     direction: rtl;
     font-family: 'Heebo', Arial, sans-serif;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin: 0px;
+    padding: 0px;
+}
+
+main{
+    margin: 30px;
 }
 
 .NameOfTheMovie {
@@ -83,43 +124,6 @@ body{
     display: flex;
     gap: 30px;
     margin-bottom: 30px;
-}
-
-@media (max-width: 1023px) {
-    .DisANDPic{
-        flex-direction: column;
-        text-align: center;
-    }
-    .OO{
-        flex-direction: column;
-    }
-    .menu{
-        justify-content: space-between;
-        padding: 12px 24px; 
-    }
-    .Trailer{
-        padding-right: 0px;
-    }
-}
-
-@media (max-width: 767px) {
-    body {
-        padding: 15px;
-    }
-    .menu{
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-        text-align: center;
-    }
-    .Footer{
-        flex-direction: column;
-        align-items: right;
-        text-align: right;
-    }
-    .Trailer{
-        padding-right: 0px;
-    }
 }
 
 .Discription{
@@ -180,4 +184,74 @@ body{
 
 .FootList a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 1023px) {
+    .DisANDPic{
+        flex-direction: column;
+        text-align: center;
+    }
+    .OO{
+        flex-direction: column;
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px;
+        color: white;
+    }
+    .menu {
+        display: flex;
+        list-style: none;
+        color: white;
+    }
+    .menu a {
+        color: white;
+        text-decoration: none;
+    }
+    .hamburger {
+        display: none;
+        font-size: 28px;
+        cursor: pointer;
+    }
+    .Trailer{
+        padding-right: 0px;
+    }
+}
+
+@media (max-width: 767px) {
+    .menu{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #333;
+        width: 100%;
+        text-align: center;
+        max-height: 0;          
+        overflow: hidden;       
+        transition: max-height 0.35s ease;
+    }
+    .menu.active {
+        max-height: 500px;
+    }
+    .hamburger {
+        display: block;
+        margin-left: 80px;
+        font-size: 45px;
+    }
+    .Trailer{
+        width: 100%;
+    }
+    .PictureOfMovie{
+        width: 100%;
+    }
+    .Footer{
+        padding: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: right;
+    }
 }
