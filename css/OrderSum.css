@@ -3,6 +3,8 @@ body{
     direction: rtl;
     font-family: 'Heebo', Arial, sans-serif;
     color: white;
+    margin: 0px;
+    padding: 0px;
 }
 
 .navbar{
@@ -77,12 +79,17 @@ main{
     padding-right: 20px;
 }
 
+.hamburger{
+    display: none;
+}
+
 .Path{
     margin-top: 30px;
 }
 
 .Sum{
     background-color: rgb(0, 0, 0);
+    border-style: groove;
     border-color: gold;
     border-radius: 8px;
     margin: 40px;
@@ -94,7 +101,7 @@ main{
 
 .BackButton{
     text-align: center;
-    background-color: brown;
+    background: linear-gradient(180deg, rgba(176,42,42,.60), rgba(176,42,42,.35));
     color: white;
     width: fit-content;
     margin: 0 auto;
@@ -149,13 +156,12 @@ main{
         padding: 16px;
         color: white;
     }
-    .manu {
+    .menu {
         display: flex;
         list-style: none;
-        gap: 20px;
         color: white;
     }
-    .manu a {
+    .menu a {
         color: white;
         text-decoration: none;
     }
@@ -169,31 +175,38 @@ main{
 
 @media (max-width: 767px) {
     main{
-       padding: 15px;
+        padding: 15px;
     }
     .menu{
-        display: none;
+        display: flex;
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 100%;
         right: 0;
         background: #333;
         width: 100%;
         text-align: center;
+        max-height: 0;          
+        overflow: hidden;       
+        transition: max-height 0.35s ease;
     }
-    .manu.active {
-        display: flex;
+    .menu.active {
+        max-height: 500px;
     }
     .hamburger {
         display: block;
+        margin-left: 80px;
+        font-size: 45px;
     }
     .Sum{
         margin: 3px;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
     .Footer{
         padding: 15px;
         flex-direction: column;
-        align-items: right;
+        align-items: flex-start;
         text-align: right;
     }
 }
