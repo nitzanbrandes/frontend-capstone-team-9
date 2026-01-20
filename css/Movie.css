@@ -242,12 +242,14 @@ main{
         margin-left: 80px;
         font-size: 45px;
     }
-    .Trailer{
-        width: 100%;
-    }
-    .PictureOfMovie{
-        width: 100%;
-    }
+    .PictureOfMovie img,
+    .Trailer iframe {
+        width: 100%;       /* יתפוס את רוחב המיכל */
+        max-width: 400px;  /* לא יגדל מעבר לרוחב המקורי */
+        height: auto;      /* שומר על יחס הגובה-רוחב */
+        display: block;
+        margin: 0 auto;    /* מרכז בתא אם קטן מהמיכל */
+    }   
     .Footer{
         padding: 15px;
         flex-direction: column;
