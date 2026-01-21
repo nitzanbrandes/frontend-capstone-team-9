@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>בחירת מקומות</title>
+  <link rel="stylesheet" href="css/booking.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="booking-page">
+<header class="navbar">
+  <div class="nav-inner">
+    <a class="brand" href="#">
+      <img src="logo2.png" alt="cinema logo">
+    </a>
+    <nav class="menu">
+      <a href="#">בית</a>
+      <a href="#">אודות</a>
+      <a href="#">שירותים</a>
+      <a href="#">מנויים</a>
+      <a href="#">מזנון</a>
+      <a href="#">דרושים</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+    <div class="page-title">
+        <h1>מלך האריות</h1>
+        <span class="badge">בחירת מקומות</span>
+    </div>
+    <div class="booking-layout">
+    <aside class="booking-sidebar">
+        <section class="card">
+            <h2 class="card-title">בחר הקרנה</h2>
+        <div class="form-row">
+            <label for="location">מיקום:</label>
+            <select id="location">
+                <option value="" disabled selected hidden>בחר מיקום</option>
+                <option value="haifa">חיפה</option>
+                <option value="tel aviv">תל אביב</option>
+                <option value="netanya">נתניה</option>
+                <option value="jerusalem">ירושלים</option>
+                <option value="beersheba">באר שבע</option>  
+                <option value="nahariya">נהריה</option> 
+            </select>
+        </div>
+        <div class="form-row">
+            <label for="day">יום:</label>
+            <select id="day">
+                <option value="" disabled selected hidden>בחר יום</option>
+                <option value="2026-01-02">02/01/2026</option>
+                <option value="2026-01-03">03/01/2026</option>
+                <option value="2026-01-04">04/01/2026</option>
+            </select>
+        </div>
+        <div class="form-row">
+            <label for="time">שעה:</label>
+            <select id="time">
+                <option value="" disabled selected hidden>בחר שעה</option>
+                <option value="18:00">18:00</option>
+                <option value="20:30">20:30</option>
+                <option value="22:45">22:45</option>
+            </select>
+        </div>
+             <button id="showSeatsBtn" class="primary-btn" type="button" disabled> הצג מפת מושבים</button>
+             <p id="showSeatsHint" class="hint"> בחר מיקום, יום ושעה כדי להפעיל את הכפתור.</p>
+        </section>
+        <section class="card movie-card">
+            <img src="lionking.jpg" alt="מלך האריות" class="movie-poster">
+        </section>
+    </aside>
+
+    <section class="booking-main">
+    <section class="card" id="preSeatPlaceHolder">
+        <h2>בחר הקרנה כדי להמשיך</h2>
+        <p class="muted">
+          יש לבחור מיקום, יום ושעה כדי להציג את מפת המושבים.
+        </p> 
+    </section>
+    <section class="card" id="seatSection" hidden>
+      <h2>מפת מושבים</h2>
+
+      <div class="legend">
+        <span class="chip regular">רגיל</span>
+        <span class="chip vip">VIP</span>
+        <span class="chip taken">תפוס</span>
+        <span class="chip selected">נבחר</span>
+      </div>
+
+      <div class="seatmap-wrap">
+        <svg id="seatMap" viewBox="0 0 620 520" aria-label="מפת מושבים"></svg>
+      </div>
+    </section>
+
+    <!-- סיכום בחירה -->
+    <section class="card" id="summarySection" hidden>
+      <h2>סיכום בחירה</h2>
+
+      <div id="selectionInfo" class="muted">עוד לא נבחרו מושבים.</div>
+      <ul id="selectedList" class="selected-list"></ul>
+
+      <div class="total-row">
+        <strong>סה״כ:</strong>
+        <span id="totalPrice">0 ₪</span>
+      </div>
+
+      <button id="goSummary" class="primary-btn" type="button" disabled>
+        לסיכום הזמנה
+      </button>
+
+      <p class="hint">
+        הכפתור יופעל אחרי בחירת מיקום/יום/שעה + בחירת לפחות מושב אחד.
+      </p>
+    </section>
+    </section>
+    </div>
+  </main>
+  <hr/>
+  <footer>
+    <div class="Footer">
+        <div><h5>קישורים מהירים</h5>
+            <ul class="FootList">
+                <li><a href="#">עמוד הבית</a></li>
+                <li><a href="#">אודות</a></li>
+                <li><a href="#">צור קשר</a></li>
+                <li><a href="#">העגלה שלי</a></li>
+            </ul>
+        </div>
+        <div><h5>יצירת קשר</h5>
+            <ul class="FootList">
+                <li>arenacinema@gmail.com</li>
+                <li>073-1234567</li>
+                <li>רחוב דיזנגוף 123, תל אביב</li>
+            </ul>
+        </div>
+        <div><h5>שעות פעילות</h5>
+            <ul class="FootList">
+                <li>ראשון - רביעי: 10:00-00:00</li>
+                <li>חמישי: 10:00-01:00</li>
+                <li>שישי: 10:00-15:00</li>
+                <li>מוצ״ש: 19:00-00:00</li>
+            </ul>
+        </div>
+        <div><h5>מידע נוסף</h5>
+            <ul class="FootList">
+                <li><a href="#">תנאים והגבלות</a></li>
+                <li><a href="#">מדיניות פרטיות</a></li>
+                <li><a href="#">שאלות ותשובות</a></li>
+                <li><a href="#">נגישות</a></li>
+                <li><a href="#">דרושים</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+ <script src="js/booking.js"></script>
+</body>
+</html>

@@ -1,0 +1,565 @@
+/* =========================
+   Dark Cinema - Clean CSS
+   ========================= */
+
+:root{
+  --bg1:#070708;
+  --bg2:#0f0f12;
+
+  --surface: rgba(255,255,255,.05);
+  --surface2: rgba(255,255,255,.03);
+
+  --text:#f5f5f7;
+  --muted:#a7a7b4;
+
+  --border: rgba(255,255,255,.10);
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+
+  --radius: 14px;
+  --focus: 0 0 0 3px rgba(202,162,77,.25);
+}
+
+*{ box-sizing:border-box; }
+
+
+body{
+  font-family: 'Heebo', Arial, sans-serif;
+  direction: rtl;
+  color: var(--text);
+  background: rgb(40,34,34);
+  margin:0;
+  padding:0;
+}
+
+
+/* =========================
+   Navbar
+   ========================= */
+
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+  background: linear-gradient(180deg, rgba(176,42,42,.60), rgba(176,42,42,.35));
+  backdrop-filter: blur(6px);
+}
+
+.nav-inner{
+  max-width: 1000px;
+  margin: auto;
+  padding: 16px 20px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Logo */
+.brand{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex: 0 0 auto;
+}
+
+.brand img{
+  height: 70px;      /* תתעסקי רק עם זה אם צריך */
+  width: auto;
+  display: block;
+}
+
+/* Links */
+.menu{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  justify-content: center;
+  gap: 14px;
+}
+
+.menu a{
+  color: var(--text);
+  text-decoration: none;
+
+  display: inline-flex;        /* חשוב: מגדיל שטח לחיץ */
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 18px;          /* השטח הגדול שביקשת */
+  border-radius: 12px;
+
+  font-size: 17px;             /* יותר גדול */
+  font-weight: 600;
+  line-height: 1;
+
+  transition: background .12s ease, transform .12s ease;
+}
+
+.menu a:hover{
+  background: rgba(255,255,255,.10);
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   Layout
+   ========================= */
+
+.container{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.booking-layout{
+  display:grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  align-items:start;
+}
+
+.booking-sidebar{
+  display:flex;
+  flex-direction:column;
+  gap: 18px;
+}
+
+.booking-main{
+  display:flex;
+  flex-direction:column;
+  gap: 16px;
+}
+
+/* כותרת עמוד */
+h1{
+  margin: 10px 0 18px;
+  font-size: 28px;
+  color: var(--text);
+}
+
+/* =========================
+   Cards
+   ========================= */
+
+.card{
+  background: linear-gradient(180deg, var(--surface), var(--surface2));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px;
+  color: var(--text);
+  position: relative;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  right:0;
+  left:0;
+  height: 3px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: linear-gradient(90deg, transparent, rgba(202,162,77,.85), transparent);
+  opacity: .7;
+}
+
+.card h2{
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: var(--text);
+}
+
+/* =========================
+   Form (selects)
+   ========================= */
+
+.form-row{
+  display:flex;
+  flex-direction:column;     /* label מעל select */
+  gap: 6px;
+  margin: 14px 0;
+  text-align:right;
+}
+
+.form-row label{
+  font-size: 16px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.form-row select{
+  width:100%;
+  padding: 12px;
+  border-radius: 12px;
+  background: #ffffff;   
+  color: #111;           
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline:none;
+  direction: rtl;
+  text-align: right;
+  transition: border-color .12s ease, box-shadow .12s ease, transform .12s ease;
+}
+
+
+
+.form-row select:hover{
+  border-color: rgba(202,162,77,.35);
+}
+
+.form-row select:focus{
+  outline: none;
+  box-shadow: var(--focus);
+  border-color: #caa24d;
+}
+
+.form-row select option{
+  background: #ffffff;
+  color: #111;
+}
+
+/* hint / muted */
+.muted{
+  color: var(--muted);
+}
+
+.hint{
+  color: var(--muted);
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* =========================
+   Buttons
+   ========================= */
+
+.primary-btn{
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 0;
+  cursor:pointer;
+
+  background: linear-gradient(180deg, rgba(202,162,77,.95), rgba(202,162,77,.78));
+  color: #111;
+  font-weight: 700;
+
+  transition: transform .12s ease, filter .12s ease, opacity .12s ease;
+}
+
+.primary-btn:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+
+.primary-btn:active{
+  transform: translateY(0px);
+}
+
+.primary-btn:disabled{
+  opacity: .45;
+  cursor:not-allowed;
+  filter: grayscale(.2);
+}
+
+/* =========================
+   Poster
+   ========================= */
+
+.movie-card{
+  padding: 0;
+  overflow:hidden;
+}
+
+.movie-poster{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius: var(--radius);
+}
+
+/* =========================
+   Legend / Chips
+   ========================= */
+
+.legend{
+  display:flex;
+  gap: 8px;
+  flex-wrap:wrap;
+  margin-bottom: 10px;
+}
+
+.chip{
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.06);
+  font-size: 14px;
+  color: var(--text);
+}
+
+.chip.regular{ background: #e8e2d6; color: #111; }
+.chip.vip{ background: #c9a24d; color: #111; }
+.chip.taken{ background: #b04a4a; color: #111; }
+.chip.selected{ background: #7fa4c6; color: #111; }
+
+/* =========================
+   Seat map container
+   ========================= */
+
+.seatmap-wrap{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px;
+  overflow:auto;
+  background: rgba(255,255,255,.03);
+}
+
+/* ה-SVG עצמו */
+#seatMap{
+  width: 100%;
+  height: 520px;
+  display:block;
+}
+/* =========================
+   Seats styles
+   ========================= */
+
+.seat{
+  stroke: rgba(0,0,0,.35);
+  stroke-width: 1.2;
+  cursor: pointer;
+}
+
+/* רגיל – בהיר (קרם) כדי שיראו מושבים + מספרים */
+.seat.regular{
+  fill: #e8e2d6;   /* בז’ בהיר */
+}
+
+.seat.vip{
+  fill: #c9a24d;   /* זהב */
+}
+
+.seat.taken{
+  fill: #b04a4a;   /* אדום כהה */
+}
+
+.seat.selected{
+  fill: #7fa4c6;
+  stroke: #111;
+  stroke-width: 2.5;
+}
+
+
+/* =========================
+   Summary list
+   ========================= */
+
+.selected-list{
+  margin: 8px 0 0;
+  padding: 0 18px;
+}
+
+.selected-list li{
+  margin: 6px 0;
+  color: var(--text);
+}
+
+.total-row{
+  display:flex;
+  justify-content:space-between;
+  margin-top: 10px;
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+/* נותן לאזור הראשי גובה קבוע */
+.booking-main{
+  min-height: 520px;
+}
+
+/* מסך לפני פתיחת המפה */
+#preSeatPlaceHolder:not([hidden]){
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  background: radial-gradient(
+    circle at top,
+    rgba(255,255,255,0.08),
+    rgba(0,0,0,0.85)
+  );
+
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* כותרת */
+#preSeatPlaceHolder h2{
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* טקסט משני */
+#preSeatPlaceHolder .muted{
+  color: rgba(255,255,255,0.75);
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+
+hr{
+  border:none;
+  height:1px;
+  background: rgba(255,255,255,.10);
+  margin: 28px 0;
+}
+
+.Footer{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap: 40px 120px; /* row/col */
+  padding: 18px 16px 30px;
+  color: var(--text);
+}
+
+.Footer h5{
+  margin: 0 0 8px;
+}
+
+.FootList{
+  margin: 0;
+  padding: 0 18px 0 0;
+}
+
+.FootList li{
+  margin: 6px 0;
+  color: var(--muted);
+}
+
+.FootList a{
+  color: inherit;
+  text-decoration:none;
+}
+
+.FootList a:hover{
+  color: var(--text);
+  text-decoration: underline;
+}
+
+/* =========================
+   Responsive breakpoints
+   Mobile <=480, Tablet <=768, Desktop <=1024
+   ========================= */
+
+@media (max-width: 1024px){
+  .container{
+    max-width: 980px;
+  }
+
+  .booking-layout{
+    grid-template-columns: 280px 1fr;
+    gap: 20px;
+  }
+
+  .menu a{
+    padding: 12px 16px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px){
+  /* פריסת הדף */
+  .booking-layout{
+    grid-template-columns: 1fr;
+  }
+
+  /* Navbar */
+  .nav-inner{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .brand{
+    order: 0;
+  }
+
+  .menu{
+    order: 1;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .menu a{
+    padding: 12px 14px;
+    font-size: 16px;
+  }
+
+  /* כותרת עמוד */
+  h1{
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px){
+  .container{
+    padding: 12px;
+  }
+
+  /* Navbar */
+  .nav-inner{
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 5px;
+  }
+
+  .brand img{
+    height: 38px;
+  }
+
+  .menu{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    justify-items: center;
+  }
+
+  .menu a{
+    width: 100%;
+    text-align: center;
+    padding: 10px 8px;
+    font-size: 12px;
+    border-radius: 10px;
+  }
+
+  /* כפתורים */
+  .primary-btn{
+    width: 100%;
+  }
+
+  /* כרטיסים */
+  .card{
+    padding: 12px;
+  }
+
+  /* מפת מושבים */
+  #seatMap{
+    height: 420px;
+  }
+}
