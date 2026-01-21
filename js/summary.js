@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         menu.classList.toggle('active');
 
         if (menu.classList.contains('active')) {
-            hamburger.textContent = '✖';
+            hamburger.textContent = 'x';
         } else {
             hamburger.textContent = '☰';
         }
