@@ -32,7 +32,7 @@ header{
 }
 
 .brand img{
-    height: 70px;      /* תתעסקי רק עם זה אם צריך */
+    height: 70px;    
     width: auto;
     display: block;
 }
@@ -51,14 +51,14 @@ header{
     color: var(--text);
     text-decoration: none;
 
-    display: inline-flex;        /* חשוב: מגדיל שטח לחיץ */
+    display: inline-flex;        
     align-items: center;
     justify-content: center;
 
-    padding: 14px 18px;          /* השטח הגדול שביקשת */
+    padding: 14px 18px;          
     border-radius: 12px;
 
-    font-size: 17px;             /* יותר גדול */
+    font-size: 17px;             
     font-weight: 600;
     line-height: 1;
 

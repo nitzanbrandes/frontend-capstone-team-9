@@ -52,7 +52,7 @@ body{
 }
 
 .menu a{
-    color: var(--text);
+    color: white;
     text-decoration: none;
 
     display: inline-flex;        /* חשוב: מגדיל שטח לחיץ */
