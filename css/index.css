@@ -88,28 +88,8 @@ img{
   transform: translateY(-1px);
 }
 
-/* =========================
-   MENU
-========================= */
-.menu{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #6b2525;
-  padding: 12px 24px;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.menu a{
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  white-space: nowrap;
-}
-
-.menu a:hover{
-  text-decoration: underline;
+.hamburger{
+    display: none;
 }
 
 /* =========================
@@ -334,4 +314,26 @@ img{
     text-align: center;
     row-gap: 16px;
   }
+    .menu{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #333;
+        width: 100%;
+        text-align: center;
+        max-height: 0;          
+        overflow: hidden;       
+        transition: max-height 0.35s ease;
+    }
+    .menu.active {
+        max-height: 500px;
+    }
+    .hamburger {
+        display: block;
+        margin-left: 80px;
+        font-size: 45px;
+        color: white;
+    }
 }
