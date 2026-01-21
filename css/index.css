@@ -207,13 +207,6 @@ img{
     margin: 28px auto;
   }
 
-  .menu{
-    padding: 12px 16px;
-    justify-content: center;
-  }
-
-  .menu a{ margin-left: 12px; }
-
   .containerFIRST{ padding: 0 12px; }
 
   .hot-carousel .carousel-inner,
@@ -229,6 +222,28 @@ img{
   }
 
   .promo-img{ height: 260px; }
+  .nav-inner{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .brand{
+    order: 0;
+  }
+
+  .menu{
+    order: 1;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .menu a{
+    padding: 12px 14px;
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 480px){
