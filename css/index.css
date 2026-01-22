@@ -6,9 +6,11 @@
 html { scroll-behavior: smooth; }
 
 body{
-  margin: 0;
-  background: rgb(40, 34, 34) !important;
-  direction: rtl;
+    background: rgb(40, 34, 34);
+    direction: rtl;
+    font-family: 'Heebo', Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
 }
 
 /* תמונות לא נשפכות מהמסך */
@@ -16,80 +18,6 @@ img{
   max-width: 100%;
   height: auto;
   display: block;
-}
-
-/* =========================
-   HEADER / LOGO
-========================= */
-.navbar{
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  border-bottom: 1px solid rgba(255,255,255,.10);
-  background: linear-gradient(180deg, rgba(176,42,42,.60), rgba(176,42,42,.35));
-  backdrop-filter: blur(6px);
-}
-
-.nav-inner{
-  max-width: 1000px;
-  margin: auto;
-  padding: 16px 20px;
-  min-height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-/* Logo */
-.brand{
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  flex: 0 0 auto;
-}
-
-.brand img{
-  height: 70px;      /* תתעסקי רק עם זה אם צריך */
-  width: auto;
-  display: block;
-}
-
-/* Links */
-.menu{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex: 1;
-  justify-content: center;
-  gap: 14px;
-}
-
-.menu a{
-  color: #f5f5f7;
-  text-decoration: none;
-
-  display: inline-flex;        /* חשוב: מגדיל שטח לחיץ */
-  align-items: center;
-  justify-content: center;
-
-  padding: 14px 18px;          /* השטח הגדול שביקשת */
-  border-radius: 12px;
-
-  font-size: 17px;             /* יותר גדול */
-  font-weight: 600;
-  line-height: 1;
-
-  transition: background .12s ease, transform .12s ease;
-}
-
-.menu a:hover{
-  background: rgba(255,255,255,.10);
-  transform: translateY(-1px);
-}
-
-.hamburger{
-    display: none;
 }
 
 /* =========================
@@ -222,28 +150,6 @@ img{
   }
 
   .promo-img{ height: 260px; }
-  .nav-inner{
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-  }
-
-  .brand{
-    order: 0;
-  }
-
-  .menu{
-    order: 1;
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .menu a{
-    padding: 12px 14px;
-    font-size: 16px;
-  }
 }
 
 @media (max-width: 480px){
@@ -252,17 +158,6 @@ img{
   .container{
     padding: 0 12px;
     margin: 22px auto;
-  }
-
-  .menu{
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-  }
-
-  .menu a{
-    margin-left: 0;
-    padding: 8px 0;
   }
 
   .containerFIRST{ padding: 0 10px; }
@@ -287,68 +182,8 @@ img{
   .hot-poster{ border-radius: 14px; }
 }
 
-/* =========================
-   FOOTER
-========================= */
 .hr{ color: white; }
 
-.Footer{
-  display: flex;
-  flex-wrap: wrap;
-  color: white;
-  row-gap: 20px;
-  column-gap: 60px;
-  justify-content: center;
-  margin-top: 35px;
-  padding: 0 16px;
-}
 
-.Head{ font-size: larger; }
 
-.FootList{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
 
-.FootList a{
-  color: inherit;
-  text-decoration: none;
-}
-
-.FootList a:hover{ text-decoration: underline; }
-
-@media (max-width: 768px){
-  .Footer{ column-gap: 28px; }
-}
-
-@media (max-width: 480px){
-  .Footer{
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    row-gap: 16px;
-  }
-    .menu{
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: #333;
-        width: 100%;
-        text-align: center;
-        max-height: 0;          
-        overflow: hidden;       
-        transition: max-height 0.35s ease;
-    }
-    .menu.active {
-        max-height: 500px;
-    }
-    .hamburger {
-        display: block;
-        margin-left: 80px;
-        font-size: 45px;
-        color: white;
-    }
-}
