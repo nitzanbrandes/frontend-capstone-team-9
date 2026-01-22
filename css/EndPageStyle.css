@@ -34,6 +34,9 @@ h1{
 /* אזור כפתור */
 .row{
   margin-bottom: 16px;
+  justify-content: center;
+  display: flex;
+  gap: 12px;  
 }
 
 /* כפתור */
