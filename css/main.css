@@ -1,4 +1,7 @@
-
+html{
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
 /* Navbar */
 .site-navbar{
   position: sticky;
@@ -102,7 +105,7 @@
 
 /*size breakpoints*/
 @media (max-width: 1024px) {
-    .navbar {
+    .site-navbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -186,5 +189,12 @@
     margin-left: 80px;
     font-size: 45px;
     color: white;
+    }
+.Footer{
+    padding: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: right;
+    font-size: smaller;
     }
 }

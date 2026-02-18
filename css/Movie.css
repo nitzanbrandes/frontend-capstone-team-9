@@ -1,6 +1,4 @@
-header{
-    direction: rtl;
-}
+* { box-sizing: border-box; }
 
 body{
     background: rgb(40, 34, 34);
@@ -32,6 +30,7 @@ main{
     gap: 5px;
     column-gap: 4px;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .Details{
@@ -42,12 +41,11 @@ main{
 .Trailer{
     text-align: center;
     padding-bottom: 30px;
-    padding-right: 80px;
+    padding-right: 0px;
 }
 
 .Trailer iframe{
     max-width: 100%;
-    height: auto;
     display: block;
 }
 
@@ -93,7 +91,7 @@ main{
 }
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
     .DisANDPic{
         flex-direction: column;
         text-align: center;
@@ -102,10 +100,10 @@ main{
         flex-direction: column;
     }
     .Trailer{
-        padding-right: 0px;
+        justify-items: center;
     }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .PictureOfMovie img,
     .Trailer iframe {
