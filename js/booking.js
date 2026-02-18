@@ -297,7 +297,7 @@ goSummaryBtn.addEventListener("click", () => {
 
   // 3. בניית אובייקט הזמנה (כמו שהיה לך)
   const order = {
-    movieTitle: "שם הסרט (דמו)",
+    movieTitle: "מלך האריות",
     location: locationSelect.value,
     day: daySelect.value,
     time: timeSelect.value,
