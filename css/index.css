@@ -41,7 +41,7 @@ img{
 
 .promo-img{
   width: 100%;
-  height: 360px;
+  height: 360px;     
   object-fit: cover;
   border-radius: 16px;
 }
@@ -124,7 +124,7 @@ img{
     width: 34px;
   }
 
-  .promo-img{ height: 320px; }
+  .promo-img{ height: auto; }
 }
 
 @media (max-width: 768px){
@@ -135,7 +135,10 @@ img{
     margin: 28px auto;
   }
 
-  .containerFIRST{ padding: 0 12px; }
+  .containerFIRST{ 
+    padding: 0 12px;
+    border-radius: 16px; 
+   }
 
   .hot-carousel .carousel-inner,
   .family-carousel .carousel-inner{
@@ -149,7 +152,10 @@ img{
     width: 28px;
   }
 
-  .promo-img{ height: 260px; }
+  .promo-img{ 
+    height: auto;
+    object-fit: contain;
+   }
 }
 
 @media (max-width: 480px){
@@ -160,7 +166,15 @@ img{
     margin: 22px auto;
   }
 
-  .containerFIRST{ padding: 0 10px; }
+  .containerFIRST{ 
+    padding: 0 10px;
+    border-radius: 16px; 
+  }
+
+  .promo-img{
+    height: auto;
+    object-fit: contain;
+  }
 
   .hot-carousel .carousel-inner,
   .family-carousel .carousel-inner{
@@ -172,11 +186,6 @@ img{
   .family-carousel .carousel-control-prev,
   .family-carousel .carousel-control-next{
     width: 24px;
-  }
-
-  .promo-img{
-    height: 200px;
-    border-radius: 14px;
   }
 
   .hot-poster{ border-radius: 14px; }
